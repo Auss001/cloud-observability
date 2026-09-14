@@ -1,0 +1,15 @@
+[ci_cd]
+jenkins-server ansible_host=${jenkins_ip} ansible_user=${ssh_user}
+
+[monitoring]
+prometheus-server ansible_host=${prometheus_ip} ansible_user=${ssh_user}
+
+[app_nodes]
+%{ for idx, ip in app_ips ~}
+app-node-0${idx + 1} ansible_host=${ip} ansible_user=${ssh_user} ansible_ssh_common_args='-o StrictHostKeyChecking=no -o ProxyJump=${ssh_user}@${prometheus_ip}'
+%{ endfor ~}
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+ansible_ssh_extra_args='-o StrictHostKeyChecking=no'

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Architecture & Observability Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Cloud Infrastructure & Observability Showcase</h1>
+    <p>Automated with Terraform, Ansible, Jenkins, and Prometheus on Google Cloud</p>
+  </header>
+
+  <main>
+    <section class="card-grid">
+      <div class="card">
+        <h2>🏗️ Infrastructure (IaC)</h2>
+        <p>Custom VPC with public and private subnets, Cloud NAT Gateway, and fine-grained firewall policies provisioned via <strong>Terraform</strong>.</p>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ CI/CD & Automation</h2>
+        <p>Continuous integration and automated software delivery orchestrated using <strong>Jenkins</strong> and dynamic configuration management with <strong>Ansible</strong>.</p>
+      </div>
+
+      <div class="card">
+        <h2>📊 Observability</h2>
+        <p>Real-time node telemetry aggregated by <strong>Prometheus</strong> scraping Node Exporter daemons across isolated private subnets.</p>
+      </div>
+
+      <div class="card">
+        <h2>🗄️ Storage & Database</h2>
+        <p>Managed <strong>PostgreSQL</strong> instance peered securely over private VPC networking and durable asset tracking with <strong>Cloud Storage</strong>.</p>
+      </div>
+    </section>
+
+    <section class="status-panel">
+      <h2>Instance Metadata & Node Status</h2>
+      <div id="metrics-output">Loading instance telemetry...</div>
+      <button id="refresh-btn">Check Node Health</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Cloud Observability Project. All systems operational.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

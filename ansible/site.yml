@@ -1,0 +1,24 @@
+---
+- name: Apply base system configuration across all nodes
+  hosts: all
+  become: true
+  roles:
+    - common
+
+- name: Configure Jenkins CI/CD Controller
+  hosts: ci_cd
+  become: true
+  roles:
+    - jenkins
+
+- name: Deploy Frontend Web Application and Node Exporter
+  hosts: app_nodes
+  become: true
+  roles:
+    - node_exporter
+
+- name: Configure Prometheus Monitoring Server
+  hosts: monitoring
+  become: true
+  roles:
+    - prometheus
