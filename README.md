@@ -104,13 +104,10 @@ Navigate to Prometheus Targets (http://34.60.151.118:9090/targets) to verify tha
 
 
 ---
-
-### 2. Git Commands to Commit & Push
-
-Run these commands in PowerShell inside `C:\Users\USER\cloud-observability-project`:
-
-```powershell
-git add README.md
-git commit -m "docs: finalize architecture documentation, target endpoints, and live showcase link"
-git push origin main
-3. LinkedIn Post Copy
+| Component | Endpoint / Access | Status |
+| :--- | :--- | :--- |
+| **Frontend Application** | [http://34.59.11.26](http://34.59.11.26) | **Live / Healthy** |
+| **Grafana Visualizations** | `http://34.60.151.118:3000` | **Active (Node Exporter Full)** |
+| **Jenkins CI/CD** | `http://35.238.12.89:8080` | **Active** |
+| **Prometheus Telemetry** | `http://34.60.151.118:9090` | **Scraping (3/3 UP)** |
+| **Cloud SQL (PostgreSQL)** | `10.0.2.x` (Private Service Connection) | **Peered / Encrypted** |
